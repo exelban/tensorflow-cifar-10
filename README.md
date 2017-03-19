@@ -51,28 +51,29 @@ python3 predict.py
 
 ## Model
 
-| **Layer 1** |
+| **Convolution layer 1** |
 | :---: |
-| Convolution layer 1 |
-| ReLu 1 |
-| MaxPool 1 |
-| Normalization 1 |
-| **Layer 2** |
-| Convolution layer 2 |
-| ReLu 2 |
-| Normalization 2 |
-| MaxPool 2 |
-| **Layer 3**  |
-| Convolution layer 3 |
-| ReLu 3 |
-| Convolution layer 4 |
-| ReLu 4 |
-| Convolution layer 5 |
-| ReLu 5 |
-| Normalization 3 |
-| MaxPool 3 |
-| **Layer 4** |
-| Fully connected 1 |
-| Fully connected 2 |
-| Softmax_linear |
+| Conv_2d |
+| ReLu |
+| MaxPool |
+| LRN |
+| **Convolution layer 2** |
+| Conv_2d |
+| ReLu |
+| LRN |
+| MaxPool |
+| **Convolution layer 3**  |
+| Conv_2d |
+| ReLu |
+| **Convolution layer 4** |
+| Conv_2d |
+| ReLu |
+| **Convolution layer 5** |
+| Conv_2d |
+| ReLu |
+| LRN |
+| MaxPool |
+| **Fully connected 1** |
+| **Fully connected 2** |
+| **Softmax_linear** |
 ![](http://bodya.net/data/Zrzut%20ekranu%202017-03-19%20o%2019.11.18.png)
