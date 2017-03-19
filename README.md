@@ -104,4 +104,4 @@ tensorboard --logdir=./tensorboard
 ![](http://bodya.net/data/Zrzut%20ekranu%202017-03-19%20o%2019.11.18.png)
 
 ## License
-[MIT License](https://github.com/exelban/tensorflow-cifar-10/blob/master/LICENSE)
+[Apache License 2.0](https://github.com/exelban/tensorflow-cifar-10/blob/master/LICENSE)
