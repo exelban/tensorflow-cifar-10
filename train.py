@@ -36,9 +36,6 @@ train_writer = tf.summary.FileWriter(_SAVE_PATH, sess.graph)
 
 
 try:
-    '''
-        Restore weights from checkpont
-    '''
     print("Trying to restore last checkpoint ...")
     last_chk_path = tf.train.latest_checkpoint(checkpoint_dir=_SAVE_PATH)
     saver.restore(sess, save_path=last_chk_path)
