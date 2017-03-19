@@ -11,14 +11,14 @@ Cifar-10 convolutional network implementation example using TensorFlow library.
 **Pickle** |  *  
 
 ## Usage
-#### Download codde:
+### Download code:
 ```sh
 git clone https://github.com/exelban/tensorflow-cifar-10
 
 cd tensorflow-cifar-10
 ```
 
-#### Train cnn:
+### Train cnn:
 Batch size: 128
 
 After every 1000 iteration making prediction on all testing batch. 
