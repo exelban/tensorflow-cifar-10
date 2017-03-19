@@ -22,6 +22,7 @@ cd tensorflow-cifar-10
 Batch size: 128
 
 After every 1000 iteration making prediction on all testing batch. 
+
 20000 iteration take about 2h on GTX 960.
 
 ```sh
