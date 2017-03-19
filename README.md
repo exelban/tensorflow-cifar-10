@@ -77,3 +77,6 @@ python3 predict.py
 | **Fully connected 2** |
 | **Softmax_linear** |
 ![](http://bodya.net/data/Zrzut%20ekranu%202017-03-19%20o%2019.11.18.png)
+
+## License
+[MIT License](https://github.com/exelban/tensorflow-cifar-10/blob/master/LICENSE)
