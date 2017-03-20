@@ -1,6 +1,6 @@
 # tensorflow-cifar-10
 Cifar-10 convolutional network implementation example using TensorFlow library.
-![](http://bodya.net/data/Zrzut%20ekranu%202017-03-19%20o%2019.10.46.png)
+![](https://s3.eu-central-1.amazonaws.com/serhiy/Zrzut+ekranu+2017-03-19+o+19.10.46.png)
 
 ## Requirement
 **Library** | **Version**
@@ -101,7 +101,7 @@ tensorboard --logdir=./tensorboard
 | **Fully connected 1** |
 | **Fully connected 2** |
 | **Softmax_linear** |
-![](http://bodya.net/data/Zrzut%20ekranu%202017-03-19%20o%2019.11.18.png)
+![](https://s3.eu-central-1.amazonaws.com/serhiy/Zrzut+ekranu+2017-03-19+o+19.11.18.png)
 
 ## License
 [Apache License 2.0](https://github.com/exelban/tensorflow-cifar-10/blob/master/LICENSE)
