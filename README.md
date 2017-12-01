@@ -6,7 +6,7 @@ Cifar-10 convolutional network implementation example using TensorFlow library.
 **Library** | **Version**
 --- | ---
 **Python** | **^3.5**
-**Tensorflow** | **^1.0.1** 
+**Tensorflow** | **^1.0.1**
 **Numpy** | **^1.12.0** 
 **Pickle** |  *  
 
@@ -23,7 +23,7 @@ Batch size: 128
 
 After every 1000 iteration making prediction on testing batch. 
 
-20000 iteration take about 2h on GTX 960.
+10000 iteration take about 50min on NVIDIA K10 GPU (g2.2xlarge) or 30min on NVIDIA K80 (p2.xlarge).
 
 ```sh
 python3 train.py
@@ -32,16 +32,16 @@ Example output:
 ```sh
 Trying to restore last checkpoint ...
 Restored checkpoint from: ./tensorboard/cifar-10/-20000
-Global Step:  20010, accuracy:  98.4%, loss = 0.04 (1381.6 examples/sec, 0.09 sec/batch)
-Global Step:  20020, accuracy:  99.2%, loss = 0.02 (1370.4 examples/sec, 0.09 sec/batch)
-Global Step:  20030, accuracy: 100.0%, loss = 0.01 (1375.0 examples/sec, 0.09 sec/batch)
-Global Step:  20040, accuracy:  98.4%, loss = 0.04 (1401.3 examples/sec, 0.09 sec/batch)
-Global Step:  20050, accuracy: 100.0%, loss = 0.01 (1358.1 examples/sec, 0.09 sec/batch)
-Global Step:  20060, accuracy: 100.0%, loss = 0.02 (1289.0 examples/sec, 0.10 sec/batch)
-Global Step:  20070, accuracy: 100.0%, loss = 0.01 (1305.6 examples/sec, 0.10 sec/batch)
-Global Step:  20080, accuracy:  98.4%, loss = 0.05 (1421.1 examples/sec, 0.09 sec/batch)
-Global Step:  20090, accuracy:  99.2%, loss = 0.01 (1411.4 examples/sec, 0.09 sec/batch)
-Global Step:  20100, accuracy: 100.0%, loss = 0.00 (1369.6 examples/sec, 0.09 sec/batch)
+Global Step:  9910, accuracy: 100.0%, loss = 0.04 (928.6 examples/sec, 0.09 sec/batch)
+Global Step:  9920, accuracy: 100.0%, loss = 0.02 (931.4 examples/sec, 0.09 sec/batch)
+Global Step:  9930, accuracy: 100.0%, loss = 0.01 (928.0 examples/sec, 0.09 sec/batch)
+Global Step:  9940, accuracy:  98.4%, loss = 0.04 (927.3 examples/sec, 0.09 sec/batch)
+Global Step:  9950, accuracy:  98.4%, loss = 0.01 (930.1 examples/sec, 0.09 sec/batch)
+Global Step:  9960, accuracy: 100.0%, loss = 0.02 (941.0 examples/sec, 0.10 sec/batch)
+Global Step:  9970, accuracy: 100.0%, loss = 0.01 (936.6 examples/sec, 0.10 sec/batch)
+Global Step:  9980, accuracy:  98.4%, loss = 0.05 (928.1 examples/sec, 0.09 sec/batch)
+Global Step:  9990, accuracy:  99.2%, loss = 0.01 (928.4 examples/sec, 0.09 sec/batch)
+Global Step:  10000, accuracy: 100.0%, loss = 0.00 (926.6 examples/sec, 0.09 sec/batch)
 Accuracy on Test-Set: 76.23% (7623 / 10000)
 Saved checkpoint.
 ```
@@ -71,7 +71,7 @@ Accuracy on Test-Set: 75.73% (7573 / 10000)
 
 ## Tensorboard
 ```sh
-tensorboard --logdir=./tensorboard
+tensorboard --logdir tensorboard
 ```
 
 ## Model
@@ -102,6 +102,17 @@ tensorboard --logdir=./tensorboard
 | **Fully connected 2** |
 | **Softmax_linear** |
 ![](https://s3.eu-central-1.amazonaws.com/serhiy/Github_repo/Zrzut+ekranu+2017-03-19+o+19.11.18.png)
+
+## What's new
+
+### v0.0.1
+    - Make tests on AWS instances;
+    - Model fixes;
+    - Remove cifar-100 dataset;
+
+
+### v0.0.0
+    - First release
 
 ## License
 [Apache License 2.0](https://github.com/exelban/tensorflow-cifar-10/blob/master/LICENSE)

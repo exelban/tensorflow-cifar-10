@@ -76,7 +76,6 @@ def _print_download_progress(count, block_size, total_size):
 def maybe_download_and_extract():
     main_directory = "./data_set/"
     cifar_10_directory = main_directory+"cifar_10/"
-    cifar_100_directory = main_directory+"cifar_100/"
     if not os.path.exists(main_directory):
         os.makedirs(main_directory)
 
@@ -94,21 +93,5 @@ def maybe_download_and_extract():
             tarfile.open(name=file_path, mode="r:gz").extractall(main_directory)
         print("Done.")
 
-        url = "http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz"
-        filename = url.split('/')[-1]
-        file_path = os.path.join(main_directory, filename)
-        zip_cifar_100 = file_path
-        file_path, _ = urlretrieve(url=url, filename=file_path, reporthook=_print_download_progress)
-
-        print()
-        print("Download finished. Extracting files.")
-        if file_path.endswith(".zip"):
-            zipfile.ZipFile(file=file_path, mode="r").extractall(main_directory)
-        elif file_path.endswith((".tar.gz", ".tgz")):
-            tarfile.open(name=file_path, mode="r:gz").extractall(main_directory)
-        print("Done.")
-
         os.rename(main_directory+"./cifar-10-batches-py", cifar_10_directory)
-        os.rename(main_directory+"./cifar-100-python", cifar_100_directory)
         os.remove(zip_cifar_10)
-        os.remove(zip_cifar_100)

@@ -7,8 +7,8 @@ from include.data import get_data_set
 from include.model import model
 
 
-train_x, train_y, train_l = get_data_set(cifar=10)
-test_x, test_y, test_l = get_data_set("test", cifar=10)
+train_x, train_y, train_l = get_data_set()
+test_x, test_y, test_l = get_data_set("test")
 
 x, y, output, global_step, y_pred_cls = model()
 
@@ -16,15 +16,15 @@ _IMG_SIZE = 32
 _NUM_CHANNELS = 3
 _BATCH_SIZE = 128
 _CLASS_SIZE = 10
-_ITERATION = 20000
+_ITERATION = 10000
 _SAVE_PATH = "./tensorboard/cifar-10/"
 
 
 loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=output, labels=y))
-optimizer = tf.train.RMSPropOptimizer(learning_rate=1e-4).minimize(loss, global_step=global_step)
+optimizer = tf.train.RMSPropOptimizer(learning_rate=1e-3).minimize(loss, global_step=global_step)
 
 
-correct_prediction = tf.equal(y_pred_cls, tf.argmax(y, dimension=1))
+correct_prediction = tf.equal(y_pred_cls, tf.argmax(y, axis=1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 tf.summary.scalar("Accuracy/train", accuracy)
 
