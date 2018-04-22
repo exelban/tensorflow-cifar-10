@@ -112,11 +112,11 @@ Accuracy on Test-Set: 78.81% (7881 / 10000)
 ## Training time
 Here you can see how much time takes 60 epoch:
 
-**Device** | **Time** | **Accuracy [%]**
---- | --- | ---
-**NVidia GTX 1070** | **484 7m 41s** | **79.12**
-**Intel i3 6100** | **7m 41s** | **78.81**
-**Intel i7 7700HQ** | **7m 41s** | **78.81**
+**Device** | **Batch size**  | **Time** | **Accuracy [%]**
+--- | --- | --- | ---
+**NVidia GTX 1070** | **128** | **8m 4s** | **79.12**
+**Intel i3 6100** | **16** | **7m 41s** | **78.81**
+**Intel i7 7700HQ** | **128** | **7m 41s** | **78.81**
 
 Please send me (or open issue) your time and accuracy. I will add it to the list.
 
