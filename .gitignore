@@ -1,5 +1,4 @@
 .idea
-/data_set
-/tensorboard
-.DS_Store
-/include/__pycache__
+data_set
+tensorboard
+include/__pycache__

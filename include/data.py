@@ -7,19 +7,16 @@ import zipfile
 import sys
 
 
-def get_data_set(name="train", cifar=10):
+def get_data_set(name="train"):
     x = None
     y = None
-    l = None
 
     maybe_download_and_extract()
 
-    folder_name = "cifar_10" if cifar == 10 else "cifar_100"
+    folder_name = "cifar_10"
 
     f = open('./data_set/'+folder_name+'/batches.meta', 'rb')
-    datadict = pickle.load(f, encoding='latin1')
     f.close()
-    l = datadict['label_names']
 
     if name is "train":
         for i in range(5):
@@ -55,15 +52,16 @@ def get_data_set(name="train", cifar=10):
         x = x.transpose([0, 2, 3, 1])
         x = x.reshape(-1, 32*32*3)
 
-    def dense_to_one_hot(labels_dense, num_classes=10):
-        num_labels = labels_dense.shape[0]
-        index_offset = np.arange(num_labels) * num_classes
-        labels_one_hot = np.zeros((num_labels, num_classes))
-        labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
+    return x, dense_to_one_hot(y)
 
-        return labels_one_hot
 
-    return x, dense_to_one_hot(y), l
+def dense_to_one_hot(labels_dense, num_classes=10):
+    num_labels = labels_dense.shape[0]
+    index_offset = np.arange(num_labels) * num_classes
+    labels_one_hot = np.zeros((num_labels, num_classes))
+    labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
+
+    return labels_one_hot
 
 
 def _print_download_progress(count, block_size, total_size):

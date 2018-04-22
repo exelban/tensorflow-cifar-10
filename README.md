@@ -6,7 +6,7 @@ Cifar-10 convolutional network implementation example using TensorFlow library.
 **Library** | **Version**
 --- | ---
 **Python** | **^3.5**
-**Tensorflow** | **^1.0.1**
+**Tensorflow** | **^1.6.0**
 **Numpy** | **^1.12.0** 
 **Pickle** |  *  
 
