@@ -123,6 +123,10 @@ Please send me (or open issue) your time and accuracy. I will add it to the list
 
 ## What's new
 
+### v1.0.1
+    - Set random seed
+    - Added more information about elapsed time on epoch and full training
+
 ### v1.0.0
     - Removed all references to cifar 100
     - Small fixes in data functions
