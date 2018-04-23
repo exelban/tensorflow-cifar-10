@@ -115,8 +115,7 @@ Here you can see how much time takes 60 epoch:
 **Device** | **Batch size**  | **Time** | **Accuracy [%]**
 --- | --- | --- | ---
 **NVidia GTX 1070** | **128** | **8m 4s** | **79.12**
-**Intel i3 6100** | **16** | **7m 41s** | **78.81**
-**Intel i7 7700HQ** | **128** | **7m 41s** | **78.81**
+**Intel i7 7700HQ** | **128** | **3h 30m** | **78.91**
 
 Please send me (or open issue) your time and accuracy. I will add it to the list.
 
