@@ -10,8 +10,10 @@ from include.model import model, lr
 
 train_x, train_y = get_data_set("train")
 test_x, test_y = get_data_set("test")
+tf.set_random_seed(21)
 x, y, output, y_pred_cls, global_step, learning_rate = model()
 global_accuracy = 0
+epoch_start = 0
 
 
 # PARAMS
@@ -51,6 +53,8 @@ except ValueError:
 
 
 def train(epoch):
+    global epoch_start
+    epoch_start = time()
     batch_size = int(math.ceil(len(train_x) / _BATCH_SIZE))
     i_global = 0
 
@@ -79,6 +83,7 @@ def train(epoch):
 
 def test_and_save(_global_step, epoch):
     global global_accuracy
+    global epoch_start
 
     i = 0
     predicted_class = np.zeros(shape=len(test_x), dtype=np.int)
@@ -96,8 +101,10 @@ def test_and_save(_global_step, epoch):
     acc = correct.mean()*100
     correct_numbers = correct.sum()
 
-    mes = "\nEpoch {} - accuracy: {:.2f}% ({}/{})"
-    print(mes.format((epoch+1), acc, correct_numbers, len(test_x)))
+    hours, rem = divmod(time() - epoch_start, 3600)
+    minutes, seconds = divmod(rem, 60)
+    mes = "\nEpoch {} - accuracy: {:.2f}% ({}/{}) - time: {:0>2}:{:0>2}:{:05.2f}"
+    print(mes.format((epoch+1), acc, correct_numbers, len(test_x), int(hours), int(minutes), seconds))
 
     if global_accuracy != 0 and global_accuracy < acc:
 
@@ -119,9 +126,16 @@ def test_and_save(_global_step, epoch):
 
 
 def main():
+    train_start = time()
+
     for i in range(_EPOCH):
-        print("\nEpoch: {0}/{1}\n".format((i+1), _EPOCH))
+        print("\nEpoch: {}/{}\n".format((i+1), _EPOCH))
         train(i)
+
+    hours, rem = divmod(time() - train_start, 3600)
+    minutes, seconds = divmod(rem, 60)
+    mes = "Best accuracy pre session: {:.2f}, time: {:0>2}:{:0>2}:{:05.2f}"
+    print(mes.format(global_accuracy, int(hours), int(minutes), seconds))
 
 
 if __name__ == "__main__":
