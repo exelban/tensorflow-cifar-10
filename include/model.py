@@ -1,4 +1,4 @@
-import tensorflow as tf
+from tensorflow.compat import v1 as tf
 
 
 def model():

@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow as tf
+from tensorflow.compat import v1 as tf
 
 from include.data import get_data_set
 from include.model import model
